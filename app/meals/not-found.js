@@ -1,6 +1,6 @@
 export default function NotFound () {
     return <main className="not-found">
-        <h1>Not Found</h1>
-        <p>We couldn't find the requested page.</p>
+        <h1>Meal Not Found</h1>
+        <p>We couldn't find the requested meal.</p>
     </main>;
 }
