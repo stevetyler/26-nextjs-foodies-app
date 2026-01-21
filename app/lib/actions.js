@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 
 import { saveMeal } from './meals';
+import { revalidatePath } from 'next/cache';
 
 function isInvalidtext(text) {
   return !text || text.trim() === '';
@@ -32,6 +33,7 @@ export async function shareMeal(prevState, formData ) { // useFormState requires
     }
   }
 
+  revalidatePath('/meals'); // use layout arg to revalidate the meals layout to update nested routes
   await saveMeal(meal);
   redirect('/meals');
 }
